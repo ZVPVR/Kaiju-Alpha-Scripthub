@@ -1,0 +1,651 @@
+if game.PlaceId == 139769003880269 then
+
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+
+local Window = Rayfield:CreateWindow({
+   Name = "Kaiju Alpha",
+   LoadingTitle = "Kaiju Alpha",
+   LoadingSubtitle = "by Neptune",
+   DisableRayfieldPrompts = true,
+   DisableBuildWarnings = true,
+   ConfigurationSaving = {
+      Enabled = false,
+      FolderName = nil,
+      FileName = "Neptune67Godzilla"
+   },
+   Discord = {
+      Enabled = false,
+      Invite = "",
+      RememberJoins = true
+   },
+   KeySystem = false,
+   KeySettings = {
+      Title = "Sirius Hub",
+      Subtitle = "Key System",
+      Note = "Join the discord (discord.gg/sirius)",
+      FileName = "SiriusKey",
+      SaveKey = true,
+      GrabKeyFromSite = false,
+      Key = "Hello"
+   }
+})
+
+local MainTab = Window:CreateTab("🦎Main", nil)
+local MainSection = MainTab:CreateSection("Main", true)
+
+Rayfield:Notify({
+   Title = "Kaiju Alpha",
+   Content = "Cool execution",
+   Duration = 3,
+   Image = nil,
+   Actions = {
+      Ignore = {
+         Name = "Okay!",
+         Callback = function()
+            print("Executed!")
+         end
+      },
+   },
+})
+
+local isRunning = false
+MainTab:CreateToggle({
+   Name = "Inf Stam",
+   Info = "Spams you with 1000000 stamina",
+   CurrentValue = false,
+   Flag = "Toggle1",
+   Callback = function(Value)
+      isRunning = Value
+      if Value then
+         task.spawn(function()
+            while isRunning do
+               local args = {"GetEnergy", -1000000}
+               game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("GetModel"):InvokeServer(unpack(args))
+            end
+         end)
+      end
+   end,
+})
+
+MainTab:CreateSlider({
+   Name = "WalkSpeed Slider(50 max due to anti speed)",
+   Info = "Button info/Description.",
+   Range = {0, 50},
+   Increment = 1,
+   Suffix = "Speed",
+   CurrentValue = 0,
+   Flag = "Slider1",
+   Callback = function(Value)
+      local args = {"UpdateSpeed", true, Value}
+      game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CombatRemote"):FireServer(unpack(args))
+   end,
+})
+
+local Button = MainTab:CreateButton({
+   Name = "Quick Menu",
+   Info = "Goes to menu without the wait", -- Speaks for itself, Remove if none.
+   Interact = 'Changable',
+   Callback = function()
+ local args = {
+    "LoadCharacter"
+}
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("FireServer"):FireServer(unpack(args))
+   end,
+})
+
+task.wait(0.1)
+
+local Main1Tab = Window:CreateTab("attacks", nil)
+local Main1Section = Main1Tab:CreateSection("attacks", true)
+
+local isAttacking1 = false
+Main1Tab:CreateToggle({
+   Name = "Spam Skill 1",
+   Info = "Automatically spams Attack1",
+   CurrentValue = false,
+   Flag = "Toggle2",
+   Callback = function(Value)
+      isAttacking1 = Value
+      if Value then
+         task.spawn(function()
+            while isAttacking1 do
+               local args = {"CombatFunction", "NormalHit", "Attack1"}
+               game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CombatRemote"):FireServer(unpack(args))
+               task.wait(0.001)
+            end
+         end)
+      end
+   end,
+})
+
+local isAttacking2 = false
+Main1Tab:CreateToggle({
+   Name = "Spam Skill 2",
+   Info = "Automatically spams Attack2",
+   CurrentValue = false,
+   Flag = "Toggle3",
+   Callback = function(Value)
+      isAttacking2 = Value
+      if Value then
+         task.spawn(function()
+            while isAttacking2 do
+               local args = {"CombatFunction", "NormalHit", "Attack2"}
+               game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CombatRemote"):FireServer(unpack(args))
+               task.wait(0.001)
+            end
+         end)
+      end
+   end,
+})
+
+local isAttacking3 = false
+Main1Tab:CreateToggle({
+   Name = "Spam Skill 3",
+   Info = "Automatically spams Attack3",
+   CurrentValue = false,
+   Flag = "Toggle4",
+   Callback = function(Value)
+      isAttacking3 = Value
+      if Value then
+         task.spawn(function()
+            while isAttacking3 do
+               local args = {"CombatFunction", "NormalHit", "Attack3"}
+               game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CombatRemote"):FireServer(unpack(args))
+               task.wait(0.001)
+            end
+         end)
+      end
+   end,
+})
+
+local isAttacking4 = false
+Main1Tab:CreateToggle({
+   Name = "Spam Skill 4",
+   Info = "Automatically spams Attack4",
+   CurrentValue = false,
+   Flag = "Toggle5",
+   Callback = function(Value)
+      isAttacking4 = Value
+      if Value then
+         task.spawn(function()
+            while isAttacking4 do
+               local args = {"CombatFunction", "NormalHit", "Attack4"}
+               game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CombatRemote"):FireServer(unpack(args))
+               task.wait(0.000000001)
+            end
+         end)
+      end
+   end,
+})
+
+local isAttacking5 = false
+Main1Tab:CreateToggle({
+   Name = "Spam Skill 5",
+   Info = "Automatically spams Attack5",
+   CurrentValue = false,
+   Flag = "Toggle6",
+   Callback = function(Value)
+      isAttacking5 = Value
+      if Value then
+         task.spawn(function()
+            while isAttacking5 do
+               local args = {"CombatFunction", "NormalHit", "Attack5"}
+               game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CombatRemote"):FireServer(unpack(args))
+               task.wait(0.001)
+            end
+         end)
+      end
+   end,
+})
+
+task.wait(0.1)
+
+local Main2Tab = Window:CreateTab("Kaijus", nil)
+local Main2Section = Main2Tab:CreateSection("Kaijus", true)
+
+local Button = Main2Tab:CreateButton({
+   Name = "Anguirus",
+   Info = "Spawn Anguirus",
+   Interact = "Spawn",
+   Callback = function()
+      local args = {"Spawn", "Anguirus", "Tokyo"}
+      game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("FireServer"):FireServer(unpack(args))
+   end,
+})
+
+local Button = Main2Tab:CreateButton({
+   Name = "Gojira 1954",
+   Info = "Spawn Gojira 1954",
+   Interact = "Spawn",
+   Callback = function()
+      local args = {"Spawn", "Gojira 1954", "Tokyo"}
+      game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("FireServer"):FireServer(unpack(args))
+   end,
+})
+
+local Button = Main2Tab:CreateButton({
+   Name = "Mothra Larva",
+   Info = "Spawn Mothra Larva",
+   Interact = "Spawn",
+   Callback = function()
+      local args = {"Spawn", "Mothra Larva", "Tokyo"}
+      game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("FireServer"):FireServer(unpack(args))
+   end,
+})
+
+local Button = Main2Tab:CreateButton({
+   Name = "Showa Rodan",
+   Info = "Spawn Showa Rodan",
+   Interact = "Spawn",
+   Callback = function()
+      local args = {"Spawn", "Showa Rodan", "Tokyo"}
+      game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("FireServer"):FireServer(unpack(args))
+   end,
+})
+
+local Button = Main2Tab:CreateButton({
+   Name = "Heisei Godzilla",
+   Info = "Spawn Heisei Godzilla",
+   Interact = "Spawn",
+   Callback = function()
+      local args = {"Spawn", "Heisei Godzilla", "Tokyo"}
+      game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("FireServer"):FireServer(unpack(args))
+   end,
+})
+
+local Button = Main2Tab:CreateButton({
+   Name = "Junior Godzilla",
+   Info = "Spawn Junior Godzilla",
+   Interact = "Spawn",
+   Callback = function()
+      local args = {"Spawn", "Junior Godzilla", "Tokyo"}
+      game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("FireServer"):FireServer(unpack(args))
+   end,
+})
+
+local Button = Main2Tab:CreateButton({
+   Name = "Biollante",
+   Info = "Spawn Biollante",
+   Interact = "Spawn",
+   Callback = function()
+      local args = {"Spawn", "Biollante", "Tokyo"}
+      game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("FireServer"):FireServer(unpack(args))
+   end,
+})
+
+local Button = Main2Tab:CreateButton({
+   Name = "Volcanic Biollante",
+   Info = "Spawn Volcanic Biollante",
+   Interact = "Spawn",
+   Callback = function()
+      local args = {"Spawn", "Volcanic Biollante", "Tokyo"}
+      game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("FireServer"):FireServer(unpack(args))
+   end,
+})
+
+local Button = Main2Tab:CreateButton({
+   Name = "Burning Godzilla",
+   Info = "Spawn Burning Godzilla",
+   Interact = "Spawn",
+   Callback = function()
+      local args = {"Spawn", "Burning Godzilla", "Tokyo"}
+      game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("FireServer"):FireServer(unpack(args))
+   end,
+})
+
+local Button = Main2Tab:CreateButton({
+   Name = "Kamata Kun",
+   Info = "Spawn Kamata Kun",
+   Interact = "Spawn",
+   Callback = function()
+      local args = {"Spawn", "Kamata Kun", "Tokyo"}
+      game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("FireServer"):FireServer(unpack(args))
+   end,
+})
+
+local Button = Main2Tab:CreateButton({
+   Name = "Shinagawa Kun",
+   Info = "Spawn Shinagawa Kun",
+   Interact = "Spawn",
+   Callback = function()
+      local args = {"Spawn", "Shinagawa Kun", "Tokyo"}
+      game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("FireServer"):FireServer(unpack(args))
+   end,
+})
+
+local Button = Main2Tab:CreateButton({
+   Name = "Shin Godzilla",
+   Info = "Spawn Shin Godzilla",
+   Interact = "Spawn",
+   Callback = function()
+      local args = {"Spawn", "Shin Godzilla", "Tokyo"}
+      game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("FireServer"):FireServer(unpack(args))
+   end,
+})
+
+local Button = Main2Tab:CreateButton({
+   Name = "Godzilla 2000",
+   Info = "Spawn Godzilla 2000",
+   Interact = "Spawn",
+   Callback = function()
+      local args = {"Spawn", "Godzilla 2000", "Tokyo"}
+      game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("FireServer"):FireServer(unpack(args))
+   end,
+})
+
+local Button = Main2Tab:CreateButton({
+   Name = "Orga (First Form)",
+   Info = "Spawn Orga (First Form)",
+   Interact = "Spawn",
+   Callback = function()
+      local args = {"Spawn", "Orga (First Form)", "Tokyo"}
+      game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("FireServer"):FireServer(unpack(args))
+   end,
+})
+
+local Button = Main2Tab:CreateButton({
+   Name = "Orga (Second Form)",
+   Info = "Spawn Orga (Second Form)",
+   Interact = "Spawn",
+   Callback = function()
+      local args = {"Spawn", "Orga (Second Form)", "Tokyo"}
+      game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("FireServer"):FireServer(unpack(args))
+   end,
+})
+
+local Button = Main2Tab:CreateButton({
+   Name = "Kiryu Type 3",
+   Info = "Spawn Kiryu Type 3",
+   Interact = "Spawn",
+   Callback = function()
+      local args = {"Spawn", "Kiryu Type 3", "Tokyo"}
+      game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("FireServer"):FireServer(unpack(args))
+   end,
+})
+
+local Button = Main2Tab:CreateButton({
+   Name = "Kong 2017",
+   Info = "Spawn Kong 2017",
+   Interact = "Spawn",
+   Callback = function()
+      local args = {"Spawn", "Kong 2017", "Tokyo"}
+      game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("FireServer"):FireServer(unpack(args))
+   end,
+})
+
+local Button = Main2Tab:CreateButton({
+   Name = "Godzilla 2014",
+   Info = "Spawn Godzilla 2014",
+   Interact = "Spawn",
+   Callback = function()
+      local args = {"Spawn", "Godzilla 2014", "Tokyo"}
+      game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("FireServer"):FireServer(unpack(args))
+   end,
+})
+
+local Button = Main2Tab:CreateButton({
+   Name = "Godzilla 2019",
+   Info = "Spawn Godzilla 2019",
+   Interact = "Spawn",
+   Callback = function()
+      local args = {"Spawn", "Godzilla 2019", "Tokyo"}
+      game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("FireServer"):FireServer(unpack(args))
+   end,
+})
+
+local Button = Main2Tab:CreateButton({
+   Name = "Titan X",
+   Info = "Spawn Titan X",
+   Interact = "Spawn",
+   Callback = function()
+      local args = {"Spawn", "Titan X", "Tokyo"}
+      game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("FireServer"):FireServer(unpack(args))
+   end,
+})
+
+local Button = Main2Tab:CreateButton({
+   Name = "Mecha Godzilla 2021",
+   Info = "Spawn Mecha Godzilla 2021",
+   Interact = "Spawn",
+   Callback = function()
+      local args = {"Spawn", "Mecha Godzilla 2021", "Tokyo"}
+      game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("FireServer"):FireServer(unpack(args))
+   end,
+})
+
+local Button = Main2Tab:CreateButton({
+   Name = "Godzilla 2021",
+   Info = "Spawn Godzilla 2021",
+   Interact = "Spawn",
+   Callback = function()
+      local args = {"Spawn", "Godzilla 2021", "Tokyo"}
+      game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("FireServer"):FireServer(unpack(args))
+   end,
+})
+
+local Button = Main2Tab:CreateButton({
+   Name = "Male Muto",
+   Info = "Spawn Male Muto",
+   Interact = "Spawn",
+   Callback = function()
+      local args = {"Spawn", "Male Muto", "Tokyo"}
+      game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("FireServer"):FireServer(unpack(args))
+   end,
+})
+
+local Button = Main2Tab:CreateButton({
+   Name = "Female Muto",
+   Info = "Spawn Female Muto",
+   Interact = "Spawn",
+   Callback = function()
+      local args = {"Spawn", "Female Muto", "Tokyo"}
+      game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("FireServer"):FireServer(unpack(args))
+   end,
+})
+
+local Button = Main2Tab:CreateButton({
+   Name = "Thermo Godzilla",
+   Info = "Spawn Thermo Godzilla",
+   Interact = "Spawn",
+   Callback = function()
+      local args = {"Spawn", "Thermo Godzilla", "Tokyo"}
+      game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("FireServer"):FireServer(unpack(args))
+   end,
+})
+
+local Button = Main2Tab:CreateButton({
+   Name = "Stirker Eureka",
+   Info = "Spawn Stirker Eureka",
+   Interact = "Spawn",
+   Callback = function()
+      local args = {"Spawn", "Stirker Eureka", "Tokyo"}
+      game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("FireServer"):FireServer(unpack(args))
+   end,
+})
+
+local Button = Main2Tab:CreateButton({
+   Name = "Frostbite Godzilla",
+   Info = "Spawn Frostbite Godzilla",
+   Interact = "Spawn",
+   Callback = function()
+      local args = {"Spawn", "Frostbite Godzilla", "Tokyo"}
+      game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("FireServer"):FireServer(unpack(args))
+   end,
+})
+
+local Button = Main2Tab:CreateButton({
+   Name = "Evolved Godzilla",
+   Info = "Spawn Evolved Godzilla",
+   Interact = "Spawn",
+   Callback = function()
+      local args = {"Spawn", "Evolved Godzilla", "Tokyo"}
+      game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("FireServer"):FireServer(unpack(args))
+   end,
+})
+
+local Button = Main2Tab:CreateButton({
+   Name = "Minilla",
+   Info = "Spawn Minilla",
+   Interact = "Spawn",
+   Callback = function()
+      local args = {"Spawn", "Minilla", "Tokyo"}
+      game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("FireServer"):FireServer(unpack(args))
+   end,
+})
+
+local Button = Main2Tab:CreateButton({
+   Name = "Super Goji",
+   Info = "Spawn Super Goji",
+   Interact = "Spawn",
+   Callback = function()
+      local args = {"Spawn", "Super Goji", "Tokyo"}
+      game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("FireServer"):FireServer(unpack(args))
+   end,
+})
+
+task.wait(0.1)
+
+local Main3Tab = Window:CreateTab("Misc", nil)
+local Main3Section = Main3Tab:CreateSection("Misc", true)
+
+local isLooping = false
+Main3Tab:CreateToggle({
+   Name = "Lag Ball Spam",
+   Info = "Spams Balls",
+   CurrentValue = false,
+   Flag = "Toggle1",
+   Callback = function(Value)
+      isLooping = Value
+      if Value then
+         task.spawn(function()
+            while isLooping do
+               local args = {
+                  "Frostbite Godzilla",
+                  "Storm",
+                  game:GetService("Players").LocalPlayer.Character
+               }
+               game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("VisualRemote"):FireServer(unpack(args))
+               task.wait(0.1)
+            end
+         end)
+      end
+   end,
+})
+
+task.wait(0.1)
+
+local Main4Tab = Window:CreateTab("Beam", nil)
+local Main4Section = Main4Tab:CreateSection("Beam(Requires BEam)", true)
+
+local isLooping2 = false
+Main4Tab:CreateToggle({
+   Name = "Break People Beam",
+   Info = "Break People Beam",
+   CurrentValue = false,
+   Flag = "Toggle1",
+   Callback = function(Value)
+      isLooping2 = Value
+      if Value then
+         task.spawn(function()
+            while isLooping2 do
+ local args = {
+	"CombatFunction",
+	"CreateBeam",
+	{
+		Knockback = {
+			FaceTarget = false,
+			Velocity = -1,
+			YVelocity = 0,
+			Duration = 1
+		},
+		Name = "Atomic",
+		Energy = 0,
+		HitboxData = {
+			Offset = CFrame.new(0, 0, 10000, 1, 0, 0, 0, 1, 0, 0, 0, 1),
+			IsContinuous = false,
+			BasePart = "HumanoidRootPart",
+			Duration = 0.1,
+			Size = vector.create(210000, 2500000000, 2500000000011)
+		},
+		Cooldown = 0,
+		CanMove = true,
+		Damage = NumberRange.new(0, 0)
+	}
+}
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CombatRemote"):FireServer(unpack(args))
+
+               task.wait(0.0000000000000000000000000001)
+            end
+         end)
+      end
+   end,
+})
+
+local Button = Main4Tab:CreateButton({
+   Name = "Fling Beam",
+   Info = "Flings", -- Speaks for itself, Remove if none.
+   Interact = 'Changable',
+   Callback = function()
+     local args = {
+	"CombatFunction",
+	"CreateBeam",
+	{
+		Knockback = {
+			FaceTarget = false,
+			Velocity = 23432432432432432432423423423,
+			YVelocity = 4234243243242424242423432423423423423,
+			Duration = 1
+		},
+		Name = "Atomic",
+		Energy = 0,
+		HitboxData = {
+			Offset = CFrame.new(0, 0, 10000, 1, 0, 0, 0, 1, 0, 0, 0, 1),
+			IsContinuous = false,
+			BasePart = "HumanoidRootPart",
+			Duration = 1,
+			Size = vector.create(210000, 2500000000, 2500000000011)
+		},
+		Cooldown = 0,
+		CanMove = true,
+		Damage = NumberRange.new(0, 0)
+	}
+}
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CombatRemote"):FireServer(unpack(args))
+   end,
+})
+
+
+local Button = Main4Tab:CreateButton({
+   Name = "Incinerater Beam",
+   Info = "incinerater", -- Speaks for itself, Remove if none.
+   Interact = 'Changable',
+   Callback = function()
+     local args = {
+	"CombatFunction",
+	"CreateBeam",
+	{
+		Knockback = {
+			FaceTarget = false,
+			Velocity = 23432432432432432432423423423,
+			YVelocity = 4234243243242424242423432423423423423,
+			Duration = 1
+		},
+		Name = "Atomic",
+		Energy = 0,
+		HitboxData = {
+			Offset = CFrame.new(0, 0, 10000, 1, 0, 0, 0, 1, 0, 0, 0, 1),
+			IsContinuous = false,
+			BasePart = "HumanoidRootPart",
+			Duration = 1,
+			Size = vector.create(210000, 2500000000, 2500000000011)
+		},
+		Cooldown = 0,
+		CanMove = true,
+		Damage = NumberRange.new(67676767676767, 67676767676767)
+	}
+}
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CombatRemote"):FireServer(unpack(args))
+   end,
+})
+
+end
