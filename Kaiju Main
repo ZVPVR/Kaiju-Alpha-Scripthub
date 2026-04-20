@@ -531,7 +531,7 @@ local Toggle = VFXTab:CreateToggle({
    Name = "Female Muto Spam",
    Info = "Spams muto VFX",
    CurrentValue = false,
-   Flag = "Toggle1",
+   Flag = "Toggle2",
    Callback = function(Value)
       isMutoSpamming = Value
       if Value then
@@ -555,7 +555,7 @@ local Toggle = VFXTab:CreateToggle({
    Name = "Stirker Spam Missle",
    Info = "Spams Stirker VFX",
    CurrentValue = false,
-   Flag = "Toggle1",
+   Flag = "Toggle3",
    Callback = function(Value)
       isStirkerSpamming = Value
       if Value then
@@ -579,7 +579,7 @@ local Toggle = VFXTab:CreateToggle({
    Name = "Frostbite Godzilla Spam Ice",
    Info = "Spams Frostbite Godzilla VFX",
    CurrentValue = false,
-   Flag = "Toggle1",
+   Flag = "Toggle4",
    Callback = function(Value)
       isFGSpamming = Value
       if Value then
@@ -603,7 +603,7 @@ local Toggle = VFXTab:CreateToggle({
    Name = "Titan X Domain Expansion",
    Info = "Spams Titan VFX",
    CurrentValue = false,
-   Flag = "Toggle1",
+   Flag = "Toggle5",
    Callback = function(Value)
       isBubbleSpamming = Value
       if Value then
