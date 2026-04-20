@@ -104,22 +104,25 @@ MainTab:CreateSlider({
    end,
 })
 
-MainTab:CreateSlider({
+MainTab:CreateInput({
    Name = "Damage Multi(set to 1 for normal damage)",
    Info = "Damage Multi",
-   Range = {0, 1000},
-   Increment = 1,
-   Suffix = "Damage",
-   CurrentValue = 0,
-   Flag = "Slider2",
-   Callback = function(Value)
-      local args = {
-          "UpdateAttribute",
-          "DamageMulti",
-          Value
-      }
-      game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("FireServer"):FireServer(unpack(args))
-   end
+   PlaceholderText = "Enter damage multiplier...",
+   NumbersOnly = true,
+   OnEnter = true,
+   RemoveTextAfterFocusLost = false,
+   Flag = "Input1",
+   Callback = function(Text)
+      local Value = tonumber(Text)
+      if Value then
+         local args = {
+            "UpdateAttribute",
+            "DamageMulti",
+            Value
+         }
+         game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("FireServer"):FireServer(unpack(args))
+      end
+   end,
 })
 
 local Button = MainTab:CreateButton({
