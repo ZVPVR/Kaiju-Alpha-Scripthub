@@ -67,6 +67,29 @@ MainTab:CreateToggle({
    end,
 })
 
+local ishealing = false
+MainTab:CreateToggle({
+   Name = "Inf Health",
+   Info = "Spams you with 100000 Health",
+   CurrentValue = false,
+   Flag = "Toggle67",
+   Callback = function(Value)
+      ishealing = Value
+      if Value then
+         task.spawn(function()
+            while ishealing do 
+               local args = {
+                  "UpdateHealth",
+                  10000000
+               }
+               game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("FireServer"):FireServer(unpack(args))
+               task.wait()
+            end
+         end)
+      end
+   end,
+})
+
 MainTab:CreateSlider({
    Name = "WalkSpeed Slider(50 max due to anti speed)",
    Info = "Button info/Description.",
