@@ -523,6 +523,84 @@ local Button = Main2Tab:CreateButton({
 
 task.wait(0.1)
 
+local Main6Tab = Window:CreateTab("VFX", nil)
+local Main6Section = Main6Tab:CreateSection("VFX", true)
+
+local isMutoSpamming = false
+local Toggle = Main6Tab:CreateToggle({
+   Name = "Female Muto Spam",
+   Info = "Spams muto VFX",
+   CurrentValue = false,
+   Flag = "Toggle1",
+   Callback = function(Value)
+      isMutoSpamming = Value
+      if Value then
+         task.spawn(function()
+            while isMutoSpamming do
+               local args = {
+                  "Female Muto",
+                  "EMP",
+                  game:GetService("Players").LocalPlayer.Character
+               }
+               game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("VisualRemote"):FireServer(unpack(args))
+               task.wait() -- spam speed
+            end
+         end)
+      end
+   end,
+})
+
+local isStirkerSpamming = false
+local Toggle = Main6Tab:CreateToggle({
+   Name = "Stirker Spam Missle",
+   Info = "Spams Stirker VFX",
+   CurrentValue = false,
+   Flag = "Toggle1",
+   Callback = function(Value)
+      isStirkerSpamming = Value
+      if Value then
+         task.spawn(function()
+            while isStirkerSpamming do
+local args = {
+    "Stirker Eureka",
+    "Missile",
+    game:GetService("Players").LocalPlayer.Character
+}
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("VisualRemote"):FireServer(unpack(args))
+               task.wait() -- spam speed
+            end
+         end)
+      end
+   end,
+})
+
+local isFGSpamming = false
+local Toggle = Main6Tab:CreateToggle({
+   Name = "Frostbite Godzilla Spam Ice",
+   Info = "Spams Frostbite Godzilla VFX",
+   CurrentValue = false,
+   Flag = "Toggle1",
+   Callback = function(Value)
+      isFGSpamming = Value
+      if Value then
+         task.spawn(function()
+            while isFGSpamming do
+local args = {
+    "Frostbite Godzilla",
+    "Beam",
+    game:GetService("Players").LocalPlayer.Character
+}
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("VisualRemote"):FireServer(unpack(args))
+               task.wait() -- spam speed
+            end
+         end)
+      end
+   end,
+})
+
+
+task.wait(0.1)
+
 local Main3Tab = Window:CreateTab("Misc", nil)
 local Main3Section = Main3Tab:CreateSection("Misc", true)
 
