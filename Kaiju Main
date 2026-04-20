@@ -547,6 +547,21 @@ local Button = KaijusTab:CreateButton({
    end,
 })
 
+
+local Button = KaijusTab:CreateButton({
+   Name = "Godzilla Minus One",
+   Info = "Spawn Godzilla Minus One",
+   Interact = "Spawn",
+   Callback = function()
+local args = {
+	"Spawn",
+	"Godzilla Minus One",
+	"Tokyo"
+}
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("FireServer"):FireServer(unpack(args))
+   end,
+})
+
 task.wait(0.1)
 
 local VFXTab = Window:CreateTab("VFX(MUST HAVE THE KAIJU ON)", nil)
