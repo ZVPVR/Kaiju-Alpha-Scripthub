@@ -609,20 +609,18 @@ local Toggle = VFXTab:CreateToggle({
       if Value then
          task.spawn(function()
             while isBubbleSpamming do
-while true do
-   local args = {
-      "Titan X",
-      "Bubble",
-      game:GetService("Players").LocalPlayer.Character
-   }
-   game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("VisualRemote"):FireServer(unpack(args))
-   task.wait() -- adjust speed as needed
-            end
+               local args = {
+                  "Titan X",
+                  "Bubble",
+                  game:GetService("Players").LocalPlayer.Character
+               }
+               game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("VisualRemote"):FireServer(unpack(args))
+               task.wait()
+            end 
          end)
       end
    end,
 })
-
 
 
 task.wait(0.1)
