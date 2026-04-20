@@ -218,10 +218,10 @@ Main1Tab:CreateToggle({
 
 task.wait(0.1)
 
-local Main2Tab = Window:CreateTab("Kaijus", nil)
-local Main2Section = Main2Tab:CreateSection("Kaijus", true)
+local KaijusTab = Window:CreateTab("Kaijus", nil)
+local KaijusSection = KaijusTab:CreateSection("Kaijus", true)
 
-local Button = Main2Tab:CreateButton({
+local Button = KaijusTab:CreateButton({
    Name = "Anguirus",
    Info = "Spawn Anguirus",
    Interact = "Spawn",
@@ -231,7 +231,7 @@ local Button = Main2Tab:CreateButton({
    end,
 })
 
-local Button = Main2Tab:CreateButton({
+local Button = KaijusTab:CreateButton({
    Name = "Gojira 1954",
    Info = "Spawn Gojira 1954",
    Interact = "Spawn",
@@ -241,7 +241,7 @@ local Button = Main2Tab:CreateButton({
    end,
 })
 
-local Button = Main2Tab:CreateButton({
+local Button = KaijusTab:CreateButton({
    Name = "Mothra Larva",
    Info = "Spawn Mothra Larva",
    Interact = "Spawn",
@@ -251,7 +251,7 @@ local Button = Main2Tab:CreateButton({
    end,
 })
 
-local Button = Main2Tab:CreateButton({
+local Button = KaijusTab:CreateButton({
    Name = "Showa Rodan",
    Info = "Spawn Showa Rodan",
    Interact = "Spawn",
@@ -261,7 +261,7 @@ local Button = Main2Tab:CreateButton({
    end,
 })
 
-local Button = Main2Tab:CreateButton({
+local Button = KaijusTab:CreateButton({
    Name = "Heisei Godzilla",
    Info = "Spawn Heisei Godzilla",
    Interact = "Spawn",
@@ -271,7 +271,7 @@ local Button = Main2Tab:CreateButton({
    end,
 })
 
-local Button = Main2Tab:CreateButton({
+local Button = KaijusTab:CreateButton({
    Name = "Junior Godzilla",
    Info = "Spawn Junior Godzilla",
    Interact = "Spawn",
@@ -281,7 +281,7 @@ local Button = Main2Tab:CreateButton({
    end,
 })
 
-local Button = Main2Tab:CreateButton({
+local Button = KaijusTab:CreateButton({
    Name = "Biollante",
    Info = "Spawn Biollante",
    Interact = "Spawn",
@@ -291,7 +291,7 @@ local Button = Main2Tab:CreateButton({
    end,
 })
 
-local Button = Main2Tab:CreateButton({
+local Button = KaijusTab:CreateButton({
    Name = "Volcanic Biollante",
    Info = "Spawn Volcanic Biollante",
    Interact = "Spawn",
@@ -301,7 +301,7 @@ local Button = Main2Tab:CreateButton({
    end,
 })
 
-local Button = Main2Tab:CreateButton({
+local Button = KaijusTab:CreateButton({
    Name = "Burning Godzilla",
    Info = "Spawn Burning Godzilla",
    Interact = "Spawn",
@@ -311,7 +311,7 @@ local Button = Main2Tab:CreateButton({
    end,
 })
 
-local Button = Main2Tab:CreateButton({
+local Button = KaijusTab:CreateButton({
    Name = "Kamata Kun",
    Info = "Spawn Kamata Kun",
    Interact = "Spawn",
@@ -321,7 +321,7 @@ local Button = Main2Tab:CreateButton({
    end,
 })
 
-local Button = Main2Tab:CreateButton({
+local Button = KaijusTab:CreateButton({
    Name = "Shinagawa Kun",
    Info = "Spawn Shinagawa Kun",
    Interact = "Spawn",
@@ -331,7 +331,7 @@ local Button = Main2Tab:CreateButton({
    end,
 })
 
-local Button = Main2Tab:CreateButton({
+local Button = KaijusTab:CreateButton({
    Name = "Shin Godzilla",
    Info = "Spawn Shin Godzilla",
    Interact = "Spawn",
@@ -341,7 +341,7 @@ local Button = Main2Tab:CreateButton({
    end,
 })
 
-local Button = Main2Tab:CreateButton({
+local Button = KaijusTab:CreateButton({
    Name = "Godzilla 2000",
    Info = "Spawn Godzilla 2000",
    Interact = "Spawn",
@@ -351,7 +351,7 @@ local Button = Main2Tab:CreateButton({
    end,
 })
 
-local Button = Main2Tab:CreateButton({
+local Button = KaijusTab:CreateButton({
    Name = "Orga (First Form)",
    Info = "Spawn Orga (First Form)",
    Interact = "Spawn",
@@ -361,7 +361,7 @@ local Button = Main2Tab:CreateButton({
    end,
 })
 
-local Button = Main2Tab:CreateButton({
+local Button = KaijusTab:CreateButton({
    Name = "Orga (Second Form)",
    Info = "Spawn Orga (Second Form)",
    Interact = "Spawn",
@@ -371,7 +371,7 @@ local Button = Main2Tab:CreateButton({
    end,
 })
 
-local Button = Main2Tab:CreateButton({
+local Button = KaijusTab:CreateButton({
    Name = "Kiryu Type 3",
    Info = "Spawn Kiryu Type 3",
    Interact = "Spawn",
@@ -381,7 +381,7 @@ local Button = Main2Tab:CreateButton({
    end,
 })
 
-local Button = Main2Tab:CreateButton({
+local Button = KaijusTab:CreateButton({
    Name = "Kong 2017",
    Info = "Spawn Kong 2017",
    Interact = "Spawn",
@@ -391,7 +391,7 @@ local Button = Main2Tab:CreateButton({
    end,
 })
 
-local Button = Main2Tab:CreateButton({
+local Button = KaijusTab:CreateButton({
    Name = "Godzilla 2014",
    Info = "Spawn Godzilla 2014",
    Interact = "Spawn",
@@ -401,7 +401,7 @@ local Button = Main2Tab:CreateButton({
    end,
 })
 
-local Button = Main2Tab:CreateButton({
+local Button = KaijusTab:CreateButton({
    Name = "Godzilla 2019",
    Info = "Spawn Godzilla 2019",
    Interact = "Spawn",
@@ -411,7 +411,7 @@ local Button = Main2Tab:CreateButton({
    end,
 })
 
-local Button = Main2Tab:CreateButton({
+local Button = KaijusTab:CreateButton({
    Name = "Titan X",
    Info = "Spawn Titan X",
    Interact = "Spawn",
@@ -421,7 +421,7 @@ local Button = Main2Tab:CreateButton({
    end,
 })
 
-local Button = Main2Tab:CreateButton({
+local Button = KaijusTab:CreateButton({
    Name = "Mecha Godzilla 2021",
    Info = "Spawn Mecha Godzilla 2021",
    Interact = "Spawn",
@@ -431,7 +431,7 @@ local Button = Main2Tab:CreateButton({
    end,
 })
 
-local Button = Main2Tab:CreateButton({
+local Button = KaijusTab:CreateButton({
    Name = "Godzilla 2021",
    Info = "Spawn Godzilla 2021",
    Interact = "Spawn",
@@ -441,7 +441,7 @@ local Button = Main2Tab:CreateButton({
    end,
 })
 
-local Button = Main2Tab:CreateButton({
+local Button = KaijusTab:CreateButton({
    Name = "Male Muto",
    Info = "Spawn Male Muto",
    Interact = "Spawn",
@@ -451,7 +451,7 @@ local Button = Main2Tab:CreateButton({
    end,
 })
 
-local Button = Main2Tab:CreateButton({
+local Button = KaijusTab:CreateButton({
    Name = "Female Muto",
    Info = "Spawn Female Muto",
    Interact = "Spawn",
@@ -461,7 +461,7 @@ local Button = Main2Tab:CreateButton({
    end,
 })
 
-local Button = Main2Tab:CreateButton({
+local Button = KaijusTab:CreateButton({
    Name = "Thermo Godzilla",
    Info = "Spawn Thermo Godzilla",
    Interact = "Spawn",
@@ -471,7 +471,7 @@ local Button = Main2Tab:CreateButton({
    end,
 })
 
-local Button = Main2Tab:CreateButton({
+local Button = KaijusTab:CreateButton({
    Name = "Stirker Eureka",
    Info = "Spawn Stirker Eureka",
    Interact = "Spawn",
@@ -481,7 +481,7 @@ local Button = Main2Tab:CreateButton({
    end,
 })
 
-local Button = Main2Tab:CreateButton({
+local Button = KaijusTab:CreateButton({
    Name = "Frostbite Godzilla",
    Info = "Spawn Frostbite Godzilla",
    Interact = "Spawn",
@@ -491,7 +491,7 @@ local Button = Main2Tab:CreateButton({
    end,
 })
 
-local Button = Main2Tab:CreateButton({
+local Button = KaijusTab:CreateButton({
    Name = "Evolved Godzilla",
    Info = "Spawn Evolved Godzilla",
    Interact = "Spawn",
@@ -501,7 +501,7 @@ local Button = Main2Tab:CreateButton({
    end,
 })
 
-local Button = Main2Tab:CreateButton({
+local Button = KaijusTab:CreateButton({
    Name = "Minilla",
    Info = "Spawn Minilla",
    Interact = "Spawn",
@@ -511,7 +511,7 @@ local Button = Main2Tab:CreateButton({
    end,
 })
 
-local Button = Main2Tab:CreateButton({
+local Button = KaijusTab:CreateButton({
    Name = "Super Goji",
    Info = "Spawn Super Goji",
    Interact = "Spawn",
@@ -523,11 +523,11 @@ local Button = Main2Tab:CreateButton({
 
 task.wait(0.1)
 
-local Main6Tab = Window:CreateTab("VFX", nil)
-local Main6Section = Main6Tab:CreateSection("VFX", true)
+local VFXTab = Window:CreateTab("VFX(MUST HAVE THE KAIJU ON)", nil)
+local VFXSection = VFXTab:CreateSection("VFX(MUST HAVE THE KAIJU ON)", true)
 
 local isMutoSpamming = false
-local Toggle = Main6Tab:CreateToggle({
+local Toggle = VFXTab:CreateToggle({
    Name = "Female Muto Spam",
    Info = "Spams muto VFX",
    CurrentValue = false,
@@ -551,7 +551,7 @@ local Toggle = Main6Tab:CreateToggle({
 })
 
 local isStirkerSpamming = false
-local Toggle = Main6Tab:CreateToggle({
+local Toggle = VFXTab:CreateToggle({
    Name = "Stirker Spam Missle",
    Info = "Spams Stirker VFX",
    CurrentValue = false,
@@ -575,7 +575,7 @@ game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Visua
 })
 
 local isFGSpamming = false
-local Toggle = Main6Tab:CreateToggle({
+local Toggle = VFXTab:CreateToggle({
    Name = "Frostbite Godzilla Spam Ice",
    Info = "Spams Frostbite Godzilla VFX",
    CurrentValue = false,
@@ -598,14 +598,40 @@ game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Visua
    end,
 })
 
+local isBubbleSpamming = false
+local Toggle = VFXTab:CreateToggle({
+   Name = "Titan X Domain Expansion",
+   Info = "Spams Titan VFX",
+   CurrentValue = false,
+   Flag = "Toggle1",
+   Callback = function(Value)
+      isBubbleSpamming = Value
+      if Value then
+         task.spawn(function()
+            while isBubbleSpamming do
+while true do
+   local args = {
+      "Titan X",
+      "Bubble",
+      game:GetService("Players").LocalPlayer.Character
+   }
+   game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("VisualRemote"):FireServer(unpack(args))
+   task.wait() -- adjust speed as needed
+            end
+         end)
+      end
+   end,
+})
+
+
 
 task.wait(0.1)
 
-local Main3Tab = Window:CreateTab("Misc", nil)
-local Main3Section = Main3Tab:CreateSection("Misc", true)
+local MiscTab = Window:CreateTab("Misc", nil)
+local MiscSection = MiscTab:CreateSection("Misc", true)
 
 local isLooping = false
-Main3Tab:CreateToggle({
+MiscTab:CreateToggle({
    Name = "Lag Ball Spam",
    Info = "Spams Balls",
    CurrentValue = false,
@@ -630,11 +656,11 @@ Main3Tab:CreateToggle({
 
 task.wait(0.1)
 
-local Main4Tab = Window:CreateTab("Beam", nil)
-local Main4Section = Main4Tab:CreateSection("Beam(Requires BEam)", true)
+local BeamsTab = Window:CreateTab("Beam", nil)
+local BeamsSection = BeamsTab:CreateSection("Beam(Requires BEam)", true)
 
 local isLooping2 = false
-Main4Tab:CreateToggle({
+BeamsTab:CreateToggle({
    Name = "Break People Beam",
    Info = "Break People Beam",
    CurrentValue = false,
@@ -677,7 +703,7 @@ game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Comba
    end,
 })
 
-local Button = Main4Tab:CreateButton({
+local Button = BeamsTab:CreateButton({
    Name = "Fling Beam",
    Info = "Flings", -- Speaks for itself, Remove if none.
    Interact = 'Changable',
@@ -711,7 +737,7 @@ game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Comba
 })
 
 
-local Button = Main4Tab:CreateButton({
+local Button = BeamsTab:CreateButton({
    Name = "Incinerater Beam",
    Info = "incinerater", -- Speaks for itself, Remove if none.
    Interact = 'Changable',
