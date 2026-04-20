@@ -524,6 +524,12 @@ local Button = KaijusTab:CreateButton({
    Callback = function()
       local args = {"Spawn", "Evolved Godzilla", "Tokyo"}
       game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("FireServer"):FireServer(unpack(args))
+
+      -- fix camera
+      task.wait(1)
+      local player = game:GetService("Players").LocalPlayer
+      workspace.CurrentCamera.CameraSubject = player.Character:WaitForChild("Humanoid")
+      workspace.CurrentCamera.CameraType = Enum.CameraType.Follow
    end,
 })
 
