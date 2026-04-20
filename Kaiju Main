@@ -81,6 +81,24 @@ MainTab:CreateSlider({
    end,
 })
 
+MainTab:CreateSlider({
+   Name = "Damage Multi(set to 1 for normal damage)",
+   Info = "Damage Multi",
+   Range = {0, 1000},
+   Increment = 1,
+   Suffix = "Damage",
+   CurrentValue = 0,
+   Flag = "Slider2",
+   Callback = function(Value)
+      local args = {
+          "UpdateAttribute",
+          "DamageMulti",
+          Value
+      }
+      game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("FireServer"):FireServer(unpack(args))
+   end
+})
+
 local Button = MainTab:CreateButton({
    Name = "Quick Menu",
    Info = "Goes to menu without the wait", -- Speaks for itself, Remove if none.
