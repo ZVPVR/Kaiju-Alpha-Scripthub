@@ -576,6 +576,129 @@ task.wait(0.1)
 local VFXTab = Window:CreateTab("VFX(MUST HAVE THE KAIJU ON)", nil)
 local VFXSection = VFXTab:CreateSection("VFX(MUST HAVE THE KAIJU ON)", true)
 
+local Button = VFXTab:CreateButton({
+   Name = "Nuke All Buildings(ANY KAIJU)",
+   Info = "Fires atomic at every building at once",
+   Interact = "Fire",
+   Callback = function()
+      local buildings = workspace:FindFirstChild("Building"):GetChildren()
+      for _, building in pairs(buildings) do
+         if building:IsA("Model") and building.PrimaryPart then
+            task.spawn(function()
+               local pos = building.PrimaryPart.Position
+               local args = {
+                  "Godzilla Minus One",
+                  "Atomic",
+                  game:GetService("Players").LocalPlayer.Character,
+                  vector.create(pos.X, pos.Y, pos.Z)
+               }
+               game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("VisualRemote"):FireServer(unpack(args))
+            end)
+         end
+      end
+   end,
+})
+
+local Button = VFXTab:CreateButton({
+   Name = "Female Muto Nuke",
+   Info = "Fires 5 Muto EMP per building",
+   Interact = "Fire",
+   Callback = function()
+      local buildings = workspace:FindFirstChild("Building"):GetChildren()
+      for _, building in pairs(buildings) do
+         if building:IsA("Model") and building.PrimaryPart then
+            task.spawn(function()
+               local pos = building.PrimaryPart.Position
+               for i = 1, 5 do
+                  local args = {
+                     "Female Muto",
+                     "EMP",
+                     game:GetService("Players").LocalPlayer.Character,
+                     vector.create(pos.X, pos.Y, pos.Z)
+                  }
+                  game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("VisualRemote"):FireServer(unpack(args))
+               end
+            end)
+         end
+      end
+   end,
+})
+
+local Button = VFXTab:CreateButton({
+   Name = "Stirker Nuke(May freeze for a while",
+   Info = "Fires 5 Stirker Missiles per building",
+   Interact = "Fire",
+   Callback = function()
+      local buildings = workspace:FindFirstChild("Building"):GetChildren()
+      for _, building in pairs(buildings) do
+         if building:IsA("Model") and building.PrimaryPart then
+            task.spawn(function()
+               local pos = building.PrimaryPart.Position
+               for i = 1, 5 do
+                  local args = {
+                     "Stirker Eureka",
+                     "Missile",
+                     game:GetService("Players").LocalPlayer.Character,
+                     vector.create(pos.X, pos.Y, pos.Z)
+                  }
+                  game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("VisualRemote"):FireServer(unpack(args))
+               end
+            end)
+         end
+      end
+   end,
+})
+
+local Button = VFXTab:CreateButton({
+   Name = "Frostbite Nuke",
+   Info = "Fires 5 Frostbite Beams per building",
+   Interact = "Fire",
+   Callback = function()
+      local buildings = workspace:FindFirstChild("Building"):GetChildren()
+      for _, building in pairs(buildings) do
+         if building:IsA("Model") and building.PrimaryPart then
+            task.spawn(function()
+               local pos = building.PrimaryPart.Position
+               for i = 1, 5 do
+                  local args = {
+                     "Frostbite Godzilla",
+                     "Beam",
+                     game:GetService("Players").LocalPlayer.Character,
+                     vector.create(pos.X, pos.Y, pos.Z)
+                  }
+                  game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("VisualRemote"):FireServer(unpack(args))
+               end
+            end)
+         end
+      end
+   end,
+})
+
+local Button = VFXTab:CreateButton({
+   Name = "Titan X Nuke",
+   Info = "Fires 5 Titan Bubbles per building",
+   Interact = "Fire",
+   Callback = function()
+      local buildings = workspace:FindFirstChild("Building"):GetChildren()
+      for _, building in pairs(buildings) do
+         if building:IsA("Model") and building.PrimaryPart then
+            task.spawn(function()
+               local pos = building.PrimaryPart.Position
+               for i = 1, 5 do
+                  local args = {
+                     "Titan X",
+                     "Bubble",
+                     game:GetService("Players").LocalPlayer.Character,
+                     vector.create(pos.X, pos.Y, pos.Z)
+                  }
+                  game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("VisualRemote"):FireServer(unpack(args))
+               end
+            end)
+         end
+      end
+   end,
+})
+
 local isMutoSpamming = false
 local Toggle = VFXTab:CreateToggle({
    Name = "Female Muto Spam",
