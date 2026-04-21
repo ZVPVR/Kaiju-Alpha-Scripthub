@@ -574,22 +574,32 @@ BeamsTab:CreateToggle({
 })
 
 BeamsTab:CreateButton({
-   Name = "Fling Beam",
-   Info = "Flings",
+   Name = "Incinerater Beam",
+   Info = "incinerater",
    Interact = "Changable",
    Callback = function()
       local args = {
-         generateID() .. "_19",
+         generateID() .. "_43",
          "CombatFunction", "CreateBeam",
          {
-            Knockback = {FaceTarget = false, Velocity = 23432432432432432432423423423, YVelocity = 4234243243242424242423432423423423423, Duration = 1},
-            Name = "Atomic", Energy = 0,
-            HitboxData = {
-               Offset = CFrame.new(0, 0, 10000, 1, 0, 0, 0, 1, 0, 0, 0, 1),
-               IsContinuous = false, BasePart = "HumanoidRootPart",
-               Duration = 1, Size = vector.create(210000, 2500000000, 2500000000011)
+            Knockback = {
+               FaceTarget = false,
+               Velocity = 23432432432432432432423423423,
+               YVelocity = 4234243243242424242423432423423423423,
+               Duration = 1
             },
-            Cooldown = 0, CanMove = true, Damage = NumberRange.new(0, 0)
+            Name = "Atomic",
+            Energy = 50,
+            HitboxData = {
+               Offset = CFrame.new(0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1),
+               IsContinuous = false,
+               BasePart = "HumanoidRootPart",
+               Duration = 0.1,
+               Size = vector.create(210000, 2500000000, 2500000000011)
+            },
+            Cooldown = 0,
+            CanMove = true,
+            Damage = NumberRange.new(67676767676767, 67676767676767)
          }
       }
       game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CombatRemote"):FireServer(unpack(args))
