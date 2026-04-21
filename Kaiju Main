@@ -91,16 +91,28 @@ MainTab:CreateToggle({
 })
 
 MainTab:CreateSlider({
-   Name = "WalkSpeed Slider(50 max due to anti speed)",
-   Info = "Button info/Description.",
-   Range = {0, 50},
+   Name = "WalkSpeed Slider",
+   Info = "Changes speed attribute directly on your model",
+   Range = {0, 500},
    Increment = 1,
    Suffix = "Speed",
    CurrentValue = 0,
    Flag = "Slider1",
    Callback = function(Value)
+      -- fire the remote as normal
       local args = {"UpdateSpeed", true, Value}
       game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CombatRemote"):FireServer(unpack(args))
+      
+      -- set attributes directly on your model in workspace.Live
+      local player = game:GetService("Players").LocalPlayer
+      local liveFolder = workspace:FindFirstChild("Live")
+      if liveFolder then
+         local model = liveFolder:FindFirstChild(player.Name)
+         if model then
+            model:SetAttribute("ServerSpeed", Value) -- ✅ sets ServerSpeed
+            model:SetAttribute("SpeedMulti", Value)  -- ✅ sets SpeedMulti
+         end
+      end
    end,
 })
 
@@ -938,6 +950,38 @@ local Button = BeamsTab:CreateButton({
 	}
 }
 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CombatRemote"):FireServer(unpack(args))
+   end,
+})
+
+task.wait(0.1)
+
+local TeleTab = Window:CreateTab("Teleports", nil)
+local TeleSection = TeleTab:CreateSection("Teleports", true)
+
+local Button = TeleTab:CreateButton({
+   Name = "Hong Kong",
+   Info = "Teleport to Hong Kong",
+   Interact = "Teleport",
+   Callback = function()
+      game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(866.581177, 42.75, -820.61731, -0.99619168, 8.70898447e-08, 0.0871905237, 9.50452161e-08, 1, 8.70898447e-08, -0.0871905237, 9.50452161e-08, -0.99619168)
+   end,
+})
+
+local Button = TeleTab:CreateButton({
+   Name = "Tokyo",
+   Info = "Teleport to Tokyo",
+   Interact = "Teleport",
+   Callback = function()
+      game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(46.000782, 38.0375137, -264.450623, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+   end,
+})
+
+local Button = TeleTab:CreateButton({
+   Name = "Forest",
+   Info = "Teleport to Forest",
+   Interact = "Teleport",
+   Callback = function()
+      game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-626.250061, 73.8499985, -587.599976, 1, 0, 0, 0, 1, 0, 0, 0, 1)
    end,
 })
 
