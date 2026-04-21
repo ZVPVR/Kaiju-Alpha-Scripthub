@@ -61,7 +61,12 @@ MainTab:CreateToggle({
       if liveFolder then
          local model = liveFolder:FindFirstChild(player.Name)
          if model then
-            model:SetAttribute("IsFlying", Value) -- ✅ fixed
+            model:SetAttribute("IsFlying", Value)
+            if Value then
+               model:SetAttribute("ServerSpeed", 25)
+               model:SetAttribute("SpeedMulti", 25)
+               model:SetAttribute("UseServerSpeed", true)
+            end
          end
       end
    end,
