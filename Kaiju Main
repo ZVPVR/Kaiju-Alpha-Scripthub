@@ -48,6 +48,25 @@ Rayfield:Notify({
    },
 })
 
+local isFlying = false
+MainTab:CreateToggle({
+   Name = "Fly",
+   Info = "Toggles flying on your model",
+   CurrentValue = false,
+   Flag = "FlyToggle",
+   Callback = function(Value)
+      isFlying = Value
+      local player = game:GetService("Players").LocalPlayer
+      local liveFolder = workspace:FindFirstChild("Live")
+      if liveFolder then
+         local model = liveFolder:FindFirstChild(player.Name)
+         if model then
+            model:SetAttribute("IsFlying", Value) -- ✅ fixed
+         end
+      end
+   end,
+})
+
 local isRunning = false
 MainTab:CreateToggle({
    Name = "Inf Stam",
