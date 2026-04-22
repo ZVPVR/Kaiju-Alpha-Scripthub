@@ -68,6 +68,18 @@ local Button = MainTab:CreateButton({
    end,
 })
 
+local isNoClip = false
+MainTab:CreateToggle({
+   Name = "NoClip/Fly",
+   Info = "Toggles noclip and fly",
+   CurrentValue = false,
+   Flag = "NoClipToggle",
+   Callback = function(Value)
+      isNoClip = Value
+      game:GetService("Players").LocalPlayer:SetAttribute("NoClip", Value)
+   end,
+})
+
 MainTab:CreateInput({
    Name = "Speed",
    Info = "Changes speed on your character",
