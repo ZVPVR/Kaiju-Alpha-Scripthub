@@ -112,7 +112,7 @@ MainTab:CreateToggle({
       if Value then
          task.spawn(function()
             while ishealing do
-               local args = {generateID() .. "_19", "UpdateHealth", inf}
+               local args = {generateID() .. "_19", "UpdateHealth", 100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000}
                game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("FireServer"):FireServer(unpack(args))
                task.wait()
             end
