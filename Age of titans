@@ -252,7 +252,7 @@ local AttacksSection = AttacksTab:CreateSection("Attacks", true)
 
 local isBeamSpamming = false
 AttacksTab:CreateToggle({
-   Name = "Beam Spam(*Special)",
+   Name = "Beam Spam(Special)",
    Info = "Spams the special beam",
    CurrentValue = false,
    Flag = "BeamSpamToggle",
@@ -270,5 +270,47 @@ AttacksTab:CreateToggle({
    end,
 })
 
+local isSpecialSpamming = false
+AttacksTab:CreateToggle({
+   Name = "Special(No Beam)",
+   Info = "Spams the special hitbox",
+   CurrentValue = false,
+   Flag = "SpecialSpamToggle",
+   Callback = function(Value)
+      isSpecialSpamming = Value
+      if Value then
+         task.spawn(function()
+            while isSpecialSpamming do
+               local args = {"SpecialHitbox", 3.399996757507324}
+               game:GetService("Players").LocalPlayer.Character:WaitForChild("RemoteEvent"):FireServer(unpack(args))
+               task.wait()
+            end
+         end)
+      end
+   end,
+})
+
+local isAttack5Spamming = false
+AttacksTab:CreateToggle({
+   Name = "Beam Spam",
+   Info = "Spams the attack 5 beam",
+   CurrentValue = false,
+   Flag = "Attack5BeamToggle",
+   Callback = function(Value)
+      isAttack5Spamming = Value
+      if Value then
+         task.spawn(function()
+            while isAttack5Spamming do
+               local char = game:GetService("Players").LocalPlayer.Character
+               if char then
+                  local args = {"Attack5BeamStart", 2.0249853134155273}
+                  char:WaitForChild("RemoteEvent"):FireServer(unpack(args))
+               end
+               task.wait()
+            end
+         end)
+      end
+   end,
+})
 
 end
