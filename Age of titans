@@ -1,0 +1,274 @@
+if game.PlaceId == 89851325271396 then
+
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+
+-- ✅ generateID function at the top
+local function generateID()
+   local template = "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx"
+   return string.gsub(template, "[xy]", function(c)
+      local v = (c == "x") and math.random(0, 0xf) or math.random(8, 0xb)
+      return string.format("%x", v)
+   end)
+end
+
+local Window = Rayfield:CreateWindow({
+   Name = "Age Of Titans",
+   LoadingTitle = "Age Of Titans",
+   LoadingSubtitle = "by Neptune",
+   DisableRayfieldPrompts = true,
+   DisableBuildWarnings = true,
+   ConfigurationSaving = {
+      Enabled = false,
+      FolderName = nil,
+      FileName = "Neptune67Godzilla"
+   },
+   Discord = {
+      Enabled = false,
+      Invite = "",
+      RememberJoins = true
+   },
+   KeySystem = false,
+   KeySettings = {
+      Title = "Sirius Hub",
+      Subtitle = "Key System",
+      Note = "Join the discord (discord.gg/sirius)",
+      FileName = "SiriusKey",
+      SaveKey = true,
+      GrabKeyFromSite = false,
+      Key = "Hello"
+   }
+})
+
+local MainTab = Window:CreateTab("🦎Main", nil)
+local MainSection = MainTab:CreateSection("Main", true)
+
+Rayfield:Notify({
+   Title = "Age Of Titans",
+   Content = "Cool execution",
+   Duration = 3,
+   Image = nil,
+   Actions = {
+      Ignore = {
+         Name = "Okay!",
+         Callback = function()
+            print("Executed!")
+         end
+      },
+   },
+})
+
+
+local Button = MainTab:CreateButton({
+   Name = "Quick Menu",
+   Info = "Goes to menu without the wait",
+   Interact = "Changable",
+   Callback = function()
+      local args = {"Menu"}
+      game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Died"):FireServer(unpack(args))
+   end,
+})
+
+MainTab:CreateInput({
+   Name = "Speed",
+   Info = "Changes speed on your character",
+   PlaceholderText = "Enter speed...",
+   NumbersOnly = true,
+   OnEnter = true,
+   RemoveTextAfterFocusLost = false,
+   Flag = "SpeedInput",
+   Callback = function(Text)
+      local Value = tonumber(Text)
+      if Value then
+         game:GetService("Players").LocalPlayer.Character:SetAttribute("SpeedMult", Value)
+      end
+   end,
+})
+
+MainTab:CreateButton({
+   Name = "Give Ultimate",
+   Info = "Sets ultimate to 200",
+   Interact = "Give",
+   Callback = function()
+      game:GetService("Players").LocalPlayer.Character:SetAttribute("Ultimate", 200)
+   end,
+})
+
+local isAntiStun = false
+MainTab:CreateToggle({
+   Name = "Anti Stun",
+   Info = "Prevents you from being stunned or grabbed",
+   CurrentValue = false,
+   Flag = "AntiStunToggle",
+   Callback = function(Value)
+      isAntiStun = Value
+      if Value then
+         task.spawn(function()
+            while isAntiStun do
+               local char = game:GetService("Players").LocalPlayer.Character
+               char:SetAttribute("Stunned", false)
+               char:SetAttribute("Grabbed", false)
+               task.wait(0)
+            end
+         end)
+      end
+   end,
+})
+
+local KaijusTab = Window:CreateTab("Kaijus", nil)
+local KaijusSection = KaijusTab:CreateSection("Kaijus", true)
+
+local Button = KaijusTab:CreateButton({
+   Name = "GMKGoji",
+   Info = "Spawn GMKGoji",
+   Interact = "Spawn",
+   Callback = function()
+      local args = {"GMKGoji", "Default", workspace:WaitForChild("Map"):WaitForChild("SpawnPreviews"):WaitForChild("Middle Islands")}
+      game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SpawnEvent"):FireServer(unpack(args))
+   end,
+})
+
+local Button = KaijusTab:CreateButton({
+   Name = "ShowaGigan",
+   Info = "Spawn ShowaGigan",
+   Interact = "Spawn",
+   Callback = function()
+      local args = {"ShowaGigan", "Default", workspace:WaitForChild("Map"):WaitForChild("SpawnPreviews"):WaitForChild("Middle Islands")}
+      game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SpawnEvent"):FireServer(unpack(args))
+   end,
+})
+
+local Button = KaijusTab:CreateButton({
+   Name = "Godzilla2014",
+   Info = "Spawn Godzilla2014",
+   Interact = "Spawn",
+   Callback = function()
+      local args = {"Godzilla2014", "Default", workspace:WaitForChild("Map"):WaitForChild("SpawnPreviews"):WaitForChild("Middle Islands")}
+      game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SpawnEvent"):FireServer(unpack(args))
+   end,
+})
+
+local Button = KaijusTab:CreateButton({
+   Name = "Godzilla2019",
+   Info = "Spawn Godzilla2019",
+   Interact = "Spawn",
+   Callback = function()
+      local args = {"Godzilla2019", "Default", workspace:WaitForChild("Map"):WaitForChild("SpawnPreviews"):WaitForChild("Middle Islands")}
+      game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SpawnEvent"):FireServer(unpack(args))
+   end,
+})
+
+local Button = KaijusTab:CreateButton({
+   Name = "Godzillasaurus",
+   Info = "Spawn Godzillasaurus",
+   Interact = "Spawn",
+   Callback = function()
+      local args = {"Godzillasaurus", "Default", workspace:WaitForChild("Map"):WaitForChild("SpawnPreviews"):WaitForChild("Middle Islands")}
+      game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SpawnEvent"):FireServer(unpack(args))
+   end,
+})
+
+local Button = KaijusTab:CreateButton({
+   Name = "EvolvedGodzillaRemodel",
+   Info = "Spawn EvolvedGodzillaRemodel",
+   Interact = "Spawn",
+   Callback = function()
+      local args = {"EvolvedGodzillaRemodel", "Default", workspace:WaitForChild("Map"):WaitForChild("SpawnPreviews"):WaitForChild("Middle Islands")}
+      game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SpawnEvent"):FireServer(unpack(args))
+   end,
+})
+
+local Button = KaijusTab:CreateButton({
+   Name = "Kong",
+   Info = "Spawn Kong",
+   Interact = "Spawn",
+   Callback = function()
+      local args = {"Kong", "Default", workspace:WaitForChild("Map"):WaitForChild("SpawnPreviews"):WaitForChild("Middle Islands")}
+      game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SpawnEvent"):FireServer(unpack(args))
+   end,
+})
+
+local Button = KaijusTab:CreateButton({
+   Name = "Baragon",
+   Info = "Spawn Baragon",
+   Interact = "Spawn",
+   Callback = function()
+      local args = {"Baragon", "Default", workspace:WaitForChild("Map"):WaitForChild("SpawnPreviews"):WaitForChild("Middle Islands")}
+      game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SpawnEvent"):FireServer(unpack(args))
+   end,
+})
+
+local Button = KaijusTab:CreateButton({
+   Name = "Shimo",
+   Info = "Spawn Shimo",
+   Interact = "Spawn",
+   Callback = function()
+      local args = {"Shimo", "Default", workspace:WaitForChild("Map"):WaitForChild("SpawnPreviews"):WaitForChild("Middle Islands")}
+      game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SpawnEvent"):FireServer(unpack(args))
+   end,
+})
+
+local Button = KaijusTab:CreateButton({
+   Name = "SharKing",
+   Info = "Spawn SharKing",
+   Interact = "Spawn",
+   Callback = function()
+      local args = {"SharKing", "Default", workspace:WaitForChild("Map"):WaitForChild("SpawnPreviews"):WaitForChild("Middle Islands")}
+      game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SpawnEvent"):FireServer(unpack(args))
+   end,
+})
+
+local Button = KaijusTab:CreateButton({
+   Name = "MonsterX",
+   Info = "Spawn MonsterX",
+   Interact = "Spawn",
+   Callback = function()
+      local args = {"MonsterX", "Default", workspace:WaitForChild("Map"):WaitForChild("SpawnPreviews"):WaitForChild("Middle Islands")}
+      game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SpawnEvent"):FireServer(unpack(args))
+   end,
+})
+
+local Button = KaijusTab:CreateButton({
+   Name = "Titanosaurus",
+   Info = "Spawn Titanosaurus",
+   Interact = "Spawn",
+   Callback = function()
+      local args = {"Titanosaurus", "Default", workspace:WaitForChild("Map"):WaitForChild("SpawnPreviews"):WaitForChild("Middle Islands")}
+      game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SpawnEvent"):FireServer(unpack(args))
+   end,
+})
+
+local Button = KaijusTab:CreateButton({
+   Name = "DagonRemodel",
+   Info = "Spawn DagonRemodel",
+   Interact = "Spawn",
+   Callback = function()
+      local args = {"DagonRemodel", "Default", workspace:WaitForChild("Map"):WaitForChild("SpawnPreviews"):WaitForChild("Middle Islands")}
+      game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SpawnEvent"):FireServer(unpack(args))
+   end,
+})
+
+local AttacksTab = Window:CreateTab("Attacks", nil)
+local AttacksSection = AttacksTab:CreateSection("Attacks", true)
+
+local isBeamSpamming = false
+AttacksTab:CreateToggle({
+   Name = "Beam Spam(*Special)",
+   Info = "Spams the special beam",
+   CurrentValue = false,
+   Flag = "BeamSpamToggle",
+   Callback = function(Value)
+      isBeamSpamming = Value
+      if Value then
+         task.spawn(function()
+            while isBeamSpamming do
+               local args = {"SpecialBeamStart", 5.487496852874756}
+               game:GetService("Players").LocalPlayer.Character:WaitForChild("RemoteEvent"):FireServer(unpack(args))
+               task.wait()
+            end
+         end)
+      end
+   end,
+})
+
+
+end
